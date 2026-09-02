@@ -1,0 +1,54 @@
+{
+  "fecha_generacion": "2026-07-09T16:02:41.057482",
+  "estadisticas_generales": {
+    "total_usuarios": 1,
+    "total_libros": 1326,
+    "total_ejemplares": 3373,
+    "prestamos_activos": 0,
+    "prestamos_vencidos": 0,
+    "multas_pendientes": 0,
+    "monto_total_multas": 0.0
+  },
+  "prestamos_por_mes": {
+    "Ene": 0,
+    "Feb": 0,
+    "Mar": 0,
+    "Abr": 0,
+    "May": 0,
+    "Jun": 0,
+    "Jul": 0,
+    "Ago": 0,
+    "Sep": 0,
+    "Oct": 0,
+    "Nov": 0,
+    "Dic": 0
+  },
+  "libros_mas_prestados": [],
+  "usuarios_mas_activos": [],
+  "estadisticas_por_rol": [
+    {
+      "rol": "Administrador",
+      "cantidad": 1
+    }
+  ],
+  "actividad_diaria": {
+    "fecha": "2026-07-09",
+    "prestamos_hoy": 0,
+    "devoluciones_hoy": 0,
+    "multas_generadas_hoy": 0,
+    "multas_pagadas_hoy": 0
+  },
+  "rendimiento_biblioteca": {
+    "periodo": "6 meses",
+    "fecha_inicio": "2026-01-10",
+    "fecha_fin": "2026-07-09",
+    "total_prestamos": 0,
+    "prestamos_completados": 0,
+    "prestamos_vencidos": 0,
+    "tasa_devolucion": 0,
+    "total_multas": 0,
+    "monto_total_multas": 0.0,
+    "multas_pagadas": 0,
+    "tasa_pago_multas": 0
+  }
+}

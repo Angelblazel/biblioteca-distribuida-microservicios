@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_biblioteca
+    ports:
+      - "5672:5672"     # Puerto de comunicacion de RabbitMQ
+      - "15672:15672"   # Puerto de la interfaz de administracion
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+  cdn:
+    image: nginx:alpine
+    container_name: cdn_biblioteca
+    ports:
+      - "8080:80"
+    volumes:
+      - ./cdn-resources:/usr/share/nginx/html/recursos
+
+  redis:
+    image: redis:alpine
+    container_name: redis_biblioteca
+    ports:
+      - "6379:6379"
+
+volumes:
+  rabbitmq_data:
