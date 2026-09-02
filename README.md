@@ -16,31 +16,26 @@ El sistema sigue un patrón de **Microservicios con API Gateway** y separación 
 
 ```mermaid
 flowchart TD
-    Client([Clientes Web / Móvil / Postman]) -->|HTTP / REST| Gateway[API Gateway :5000]
+    Client["Clientes Web / Móvil / Postman"] -->|HTTP / REST| Gateway["API Gateway :5000"]
     
-    subgraph Core_Microservices [Microservicios Backend - .NET]
-        Gateway -->|Proxy / Enrutamiento| CatalogoSvc[Catalogo.Service
-(Búsqueda, Libros, Categorías)]
-        Gateway -->|Proxy / Enrutamiento| NeoLibroSvc[NeoLibro.WebAPI
-(Préstamos, Usuarios, Sanciones)]
-        Gateway -->|Proxy / Eventos| NotifSvc[Notificaciones.Service
-(Alertas, Recordatorios, Correos)]
+    subgraph Core_Microservices ["Microservicios Backend - .NET"]
+        Gateway -->|Proxy / Enrutamiento| CatalogoSvc["Catalogo.Service (Búsqueda, Libros, Categorías)"]
+        Gateway -->|Proxy / Enrutamiento| NeoLibroSvc["NeoLibro.WebAPI (Préstamos, Usuarios, Sanciones)"]
+        Gateway -->|Proxy / Eventos| NotifSvc["Notificaciones.Service (Alertas, Recordatorios, Correos)"]
     end
 
-    subgraph Shared_Layer [Capa Compartida]
-        Contracts[Shared.Contracts
-(DTOs, Interfaces, Eventos)]
+    subgraph Shared_Layer ["Capa Compartida"]
+        Contracts["Shared.Contracts (DTOs, Interfaces, Eventos)"]
         CatalogoSvc -.-> Contracts
         NeoLibroSvc -.-> Contracts
         NotifSvc -.-> Contracts
     end
 
-    subgraph Persistence [Persistencia & Scripts]
-        DB[(SQL Server Database)]
+    subgraph Persistence ["Persistencia & Scripts"]
+        DB[("SQL Server Database")]
         CatalogoSvc --> DB
         NeoLibroSvc --> DB
-        PyScripts[Python Automation Tools
-(ETL, Carga Masiva, Reportes)] --> DB
+        PyScripts["Python Automation Tools (ETL, Carga Masiva, Reportes)"] --> DB
     end
 ```
 
@@ -79,8 +74,8 @@ flowchart TD
 
 ### 1. Clonar el Repositorio
 ```bash
-git clone https://github.com/tu-usuario/01-biblioteca-distribuida-microservicios.git
-cd 01-biblioteca-distribuida-microservicios
+git clone https://github.com/Angelblazel/biblioteca-distribuida-microservicios.git
+cd biblioteca-distribuida-microservicios
 ```
 
 ### 2. Configurar la Base de Datos
@@ -143,5 +138,5 @@ dotnet run
 ## Autor y Contacto
 
 - **Ángel César Obregón Blaz** — *Ingeniería de Sistemas (UNMSM)*
-- **GitHub:** [AngelObregon](https://github.com/)
+- **GitHub:** [Angelblazel](https://github.com/Angelblazel)
 - **LinkedIn:** [Ángel Obregón](https://linkedin.com/in/)
